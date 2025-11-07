@@ -2,7 +2,7 @@ class Mover {
     constructor() {
         this.mass = random(1,10);
 
-        this.position = createVector(random(0,width), random(0, height));
+        this.position = createVector(random(0,width), random(0, height/2));
         this.velocity = createVector();
         this.acceleration = createVector();
 
@@ -20,7 +20,6 @@ class Mover {
     }
 
     show() {
-        stroke(0);
         fill(175);
 
         circle(this.position.x, this.position.y, this.mass*16);

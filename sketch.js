@@ -1,14 +1,12 @@
-  // let moverA, moverB;
-  let movers = [];
+let movers = [];
 
 function setup() {
   createCanvas(800, 400);
-  // moverA = new Mover(200, 30, 5);
-  // moverB = new Mover(600, 30, 2);
+  noStroke();
 }
 
 function draw() {
-  background(220);
+  background(255);
 
   for (let m of movers) {
 
@@ -19,11 +17,6 @@ function draw() {
     m.update()
     m.show();
   }
-  
-
-  // let gravity = createVector(0, 0.1);
-  // moverA.applyForce(gravity);
-  // moverB.applyForce(gravity);
 
   // if (mouseIsPressed) {
   //   let wind = createVector(0.1, 0);
@@ -31,13 +24,6 @@ function draw() {
   //   moverB.applyForce(wind);
   // }
 
-  // moverA.checkEdges();
-  // moverA.update();
-  // moverA.show();
-
-  // moverB.checkEdges();
-  // moverB.update();
-  // moverB.show();
 }
 
 function keyPressed() {
