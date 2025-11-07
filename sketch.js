@@ -16,12 +16,16 @@ function draw() {
     m.checkEdges()
     m.update()
     m.show();
+
+    if (mouseIsPressed) {
+    let wind = createVector(0.1, 0);
+    m.applyForce(wind);
+  }
   }
 
   // if (mouseIsPressed) {
   //   let wind = createVector(0.1, 0);
-  //   moverA.applyForce(wind);
-  //   moverB.applyForce(wind);
+  //   m.applyForce(wind);
   // }
 
 }
