@@ -23,11 +23,6 @@ function draw() {
   }
   }
 
-  // if (mouseIsPressed) {
-  //   let wind = createVector(0.1, 0);
-  //   m.applyForce(wind);
-  // }
-
 }
 
 function keyPressed() {
