@@ -27,17 +27,17 @@ class Mover {
     }
 
     checkEdges() {
-        if (this.position.x > width) {
-            this.position.x = width;
+        if (this.position.x + this.mass*8 > width) {
+            this.position.x = width - this.mass*8;
             this.velocity.x *= -1;
-        } else if (this.position.x < 0) {
+        } else if (this.position.x - this.mass*8 < 0) {
             this.velocity.x *= -1;
-            this.position.x = 0;
+            this.position.x = 0 + this.mass*8;
         }
 
-        if (this.position.y > height) {
+        if (this.position.y + this.mass*8 > height) {
             this.velocity.y *= -1;
-            this.position.y = height;
+            this.position.y = height - this.mass*8;
         }
     }
 
