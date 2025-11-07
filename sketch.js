@@ -1,29 +1,48 @@
-  let moverA, moverB;
+  // let moverA, moverB;
+  let movers = [];
 
 function setup() {
   createCanvas(800, 400);
-  moverA = new Mover(200, 30, 10);
-  moverB = new Mover(600, 30, 2);
+  // moverA = new Mover(200, 30, 5);
+  // moverB = new Mover(600, 30, 2);
 }
 
 function draw() {
   background(220);
 
-  let gravity = createVector(0, 0.1);
-  moverA.applyForce(gravity);
-  moverB.applyForce(gravity);
+  for (let m of movers) {
 
-  if (mouseIsPressed) {
-    let wind = createVector(0.1, 0);
-    moverA.applyForce(wind);
-    moverB.applyForce(wind);
+    let gravity = createVector(0, 0.1);
+    m.applyForce(gravity);
+
+    m.checkEdges()
+    m.update()
+    m.show();
   }
+  
 
-  moverA.checkEdges();
-  moverA.update();
-  moverA.show();
+  // let gravity = createVector(0, 0.1);
+  // moverA.applyForce(gravity);
+  // moverB.applyForce(gravity);
 
-  moverB.checkEdges();
-  moverB.update();
-  moverB.show();
+  // if (mouseIsPressed) {
+  //   let wind = createVector(0.1, 0);
+  //   moverA.applyForce(wind);
+  //   moverB.applyForce(wind);
+  // }
+
+  // moverA.checkEdges();
+  // moverA.update();
+  // moverA.show();
+
+  // moverB.checkEdges();
+  // moverB.update();
+  // moverB.show();
+}
+
+function keyPressed() {
+  if (key === '0'){
+    let m = new Mover();
+    movers.push(m);
+  }
 }
